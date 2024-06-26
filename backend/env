@@ -1,0 +1,6 @@
+Change file name from env -> .env
+DB_USER=postgres
+DB_HOST=db
+DB_DATABASE=postgres
+DB_PASSWORD=1234
+DB_PORT=5432

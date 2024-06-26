@@ -1,0 +1,69 @@
+services: 
+  # Service configuration for the back-end Node.js application
+  back-end:
+    build: 
+      context: backend # Context of the build, pointing to the 'backend' directory
+    container_name: back-end # Name of the container
+    working_dir: /usr/src/app # Set the working directory inside the container
+    networks: 
+      - node-network # Connect to the custom bridge network
+    volumes: 
+      - ./backend:/usr/src/app # Mount the local 'backend' directory to the container
+      - /usr/src/app/node_modules # Anonymous volume to persist node_modules
+    tty: true # Allocate a pseudo-TTY
+    ports: 
+      - "3000:3000" # Map port 3000 of the host to port 3000 of the container
+    command: npm run start # Command to run the Node.js application
+    depends_on:
+      - db # Ensure the database service starts before this service
+
+  # Service configuration for the front-end React application
+  front-end:
+    build: 
+      context: frontend # Context of the build, pointing to the 'frontend' directory
+    container_name: front-end # Name of the container
+    working_dir: /usr/src/app # Set the working directory inside the container
+    networks: 
+      - node-network # Connect to the custom bridge network
+    volumes: 
+      - ./frontend:/usr/src/app # Mount the local 'frontend' directory to the container
+      - /usr/src/app/node_modules # Anonymous volume to persist node_modules
+    tty: true # Allocate a pseudo-TTY
+    ports: 
+      - "5173:5173" # Map port 5173 of the host to port 5173 of the container
+    command: npm run dev # Command to run the React development server
+
+  # Service configuration for the PostgreSQL database
+  db:
+    image: postgres # Use the official PostgreSQL image
+    container_name: db # Name of the container
+    restart: always # Always restart the container if it stops
+    tty: true # Allocate a pseudo-TTY
+    volumes:
+      - ./data:/var/lib/postgresql/data # Mount the local 'data' directory to the container
+    environment: 
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD} # Use environment variable for PostgreSQL password
+    ports: 
+      - "5432:5432" # Map port 5432 of the host to port 5432 of the container
+    networks: 
+      - node-network # Connect to the custom bridge network
+
+  # Service configuration for the Nginx reverse proxy
+  nginx:
+    build: 
+      context: nginx # Context of the build, pointing to the 'nginx' directory
+    container_name: nginx # Name of the container
+    restart: always # Always restart the container if it stops
+    tty: true # Allocate a pseudo-TTY
+    ports: 
+      - "8000:80" # Map port 8000 of the host to port 80 of the container
+    networks: 
+      - node-network # Connect to the custom bridge network
+    depends_on:
+      - back-end # Ensure the back-end service starts before this service
+      - front-end # Ensure the front-end service starts before this service
+
+# Define a custom bridge network
+networks: 
+  node-network:
+    driver: bridge

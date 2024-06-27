@@ -1,11 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true,
-    //port: 5173, When not running with docker compose, this is the port which will be used in docker
+    host: '0.0.0.0', // 確保 Vite 服務器允許從 Docker 主機訪問
+    port: 5173
   }
-})
+});

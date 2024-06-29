@@ -1,27 +1,27 @@
-# CloudTribe-Remote_Community_Support_Platform
+# CloudTribe-Remote_Community_Support_Platform 順路經濟平台
+## Project Description
 
-# 資訊專題說明
-2024寒假參訪桃園雪霧鬧部落，是人口大約 200 人的小部落，當地目前以農業和民宿還有露營為主，對外交通聯絡不易，
-地形陡峭，山路蜿蜒難以到達。因為交通問題，沒有物流會願意上山一趟，所以發展出順路經濟。例如居民到山下採買順便把一些物資帶上山，讓其他居民可以不用下山一趟，但可能都是彼此認識居民互相幫忙，我希望能擴大規模，讓居民到山下採買，還可以幫助到更多居民，同時也可以賺錢，更加活絡山區物資運輸。其中有三種角色，買家、賣家、司機，核心功能是可以讓這三個角色提出需求，利用後台配對系統，滿足彼此的需求，詳細內容可以在proposal.pdf中找到，想要做一個可以幫助偏鄉的資訊平台，希望可以用資訊的力量來幫助部落，未來想推廣到其他原住民部落使用。
+During the winter break of 2024, we visited the Sbunawtribe in Taoyuan, a small community with around 200 residents. The local economy is primarily based on agriculture, guesthouses, and camping. The area is difficult to access due to steep, winding mountain roads, making external transportation challenging. Due to these transportation issues, no logistics companies are willing to make deliveries to the mountain. This has led to the development of a "convenience economy," where residents who go down to the town for supplies also bring back goods for other residents, reducing the need for multiple trips. This system is usually based on mutual help among familiar residents.
 
+We aim to scale up this model, allowing residents to earn money by helping more people while improving the flow of goods in the mountainous area. The platform involves three roles: buyers, sellers, and drivers. The core functionality will enable these roles to express their needs and use a backend matching system to fulfill them. Detailed information can be found in proposal.pdf. We hope to create an information platform that supports remote communities and eventually expand its use to other indigenous tribes.
 
-## 核心功能
+## Core Features
 
-1. **選擇角色功能**
-2. **填寫訂單和媒合功能**
-3. **通知功能**
-4. **路徑和預計時間功能**
+1. **Role Selection Functionality**
+2. **Order Submission and Matching Functionality**
+3. **Notification Functionality**
+4. **Route and Estimated Time Functionality**
 
-## 支線功能
+## Additional Features
 
-1. **登入註冊功能**
-2. **訂單查詢功能**
-3. **訊息功能**
-4. **個人檔案功能**
-5. **記帳功能**
-
+1. **Login and Registration Functionality**
+2. **Order Tracking Functionality**
+3. **Messaging Functionality**
+4. **User Profile Functionality**
+5. **Accounting Functionality**
 
 # Technology Stack
+
 1. **Frontend: React**
 2. **Backend: Node.js + Express**
 3. **Database: PostgreSQL**
@@ -30,6 +30,8 @@
 6. **Maps and Route Planning: Google Maps API**
 7. **Reverse Proxy: Nginx**
 
+### Schedule: 2024 6/25-7/24 => Complete basic functionalities before military service
 
-### Schedule: 2024 6/25-7/24 => 當兵前完成基本功能
-### Schedule: 2024 7/4-7/7   => 實地探訪雪霧鬧部落
+### Schedule: 2024 7/4-7/7 => Field visit to Sbunaw tribe
+
+By leveraging the power of technology, we aim to support remote communities and improve their access to essential goods and services.

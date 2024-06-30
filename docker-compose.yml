@@ -37,13 +37,13 @@ services:
     command: npm run dev # Command to run the React development server
 
   # Service configuration for the PostgreSQL database
-  db:
-    image: postgres # Use the official PostgreSQL image
-    container_name: db # Name of the container
+  postgres:
+    image: postgres:alpine # Use the official PostgreSQL image
+    container_name: postgres # Name of the container
     restart: always # Always restart the container if it stops
     tty: true # Allocate a pseudo-TTY
     volumes:
-      - ./data:/var/lib/postgresql/data # Mount the local 'data' directory to the container
+      - postgres:/var/lib/postgresql/data # Mount the local 'data' directory to the container
     environment: 
       - POSTGRES_USER=$DB_USER
       - POSTGRES_PASSWORD=$DB_PASSWORD
@@ -67,6 +67,8 @@ services:
       - db # Ensure the database service starts before this service
     networks:
       - node-network # Connect to the custom bridge network
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
 
   # Service configuration for the Nginx reverse proxy
   nginx:
@@ -87,3 +89,8 @@ services:
 networks: 
   node-network:
     driver: bridge
+
+# Define named volumes
+volumes:
+  postgres:
+  pgadmin-data:

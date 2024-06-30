@@ -52,6 +52,12 @@ services:
       - "5432:5432" # Map port 5432 of the host to port 5432 of the container
     networks: 
       - node-network # Connect to the custom bridge network
+    healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U postgres"]
+        interval: 3s
+        timeout: 5s
+        retries: 10
+   
 
   # Service configuration for pgAdmin
   pgadmin:
@@ -64,7 +70,8 @@ services:
     ports:
       - "8080:80" # Map port 8080 of the host to port 80 of the container
     depends_on:
-      -  postgres # Ensure the database service starts before this service
+      postgres:
+        condition: service_healthy
     networks:
       - node-network # Connect to the custom bridge network
     volumes:

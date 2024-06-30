@@ -1,4 +1,4 @@
-# CloudTribe-Remote_Community_Support_Platform 順路經濟平台
+# CloudTribe 順路經濟平台
 ## Project Description
 
 During the winter break of 2024, we visited the Sbunawtribe in Taoyuan, a small community with around 200 residents. The local economy is primarily based on agriculture, guesthouses, and camping. The area is difficult to access due to steep, winding mountain roads, making external transportation challenging. Due to these transportation issues, no logistics companies are willing to make deliveries to the mountain. This has led to the development of a "convenience economy," where residents who go down to the town for supplies also bring back goods for other residents, reducing the need for multiple trips. This system is usually based on mutual help among familiar residents.

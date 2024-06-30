@@ -53,6 +53,21 @@ services:
     networks: 
       - node-network # Connect to the custom bridge network
 
+  # Service configuration for pgAdmin
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: "always"
+    environment:
+          PGADMIN_DEFAULT_EMAIL: $DB_EMAIL
+          PGADMIN_DEFAULT_PASSWORD: $DB_PASSWORD
+    ports:
+      - "8080:80" # Map port 8080 of the host to port 80 of the container
+    depends_on:
+      - db # Ensure the database service starts before this service
+    networks:
+      - node-network # Connect to the custom bridge network
+
   # Service configuration for the Nginx reverse proxy
   nginx:
     build: 

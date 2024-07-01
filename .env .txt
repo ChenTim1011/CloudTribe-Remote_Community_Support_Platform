@@ -1,0 +1,9 @@
+改變檔名 .env.txt -> .env
+寫 .env 檔指定 PostgreSQL 的使用者密碼
+
+POSTGRES_USER=postgres
+POSTGRES_HOST=postgres
+POSTGRES_DATABASE=postgres
+POSTGRES_PASSWORD=1234
+POSTGRES_PORT=5432
+POSTGRES_EMAIL=110208059@g.nccu.edu.tw

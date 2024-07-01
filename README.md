@@ -1,4 +1,5 @@
 # CloudTribe 順路經濟平台
+
 ## Project Description
 
 During the winter break of 2024, we visited the Sbunawtribe in Taoyuan, a small community with around 200 residents. The local economy is primarily based on agriculture, guesthouses, and camping. The area is difficult to access due to steep, winding mountain roads, making external transportation challenging. Due to these transportation issues, no logistics companies are willing to make deliveries to the mountain. This has led to the development of a "convenience economy," where residents who go down to the town for supplies also bring back goods for other residents, reducing the need for multiple trips. This system is usually based on mutual help among familiar residents.
@@ -29,6 +30,22 @@ We aim to scale up this model, allowing residents to earn money by helping more 
 5. **Real-Time Communication: Socket.IO**
 6. **Maps and Route Planning: Google Maps API**
 7. **Reverse Proxy: Nginx**
+
+## Steps to install (TBD)
+
+1. git clone https://github.com/ChenTim1011/CloudTribe.git
+
+2. change file .env.txt -> .env, and setting the environment variable about Postgresql
+
+3. docker-compose up --build.
+
+4. Open http://localhost:8080/ login with the env email and password.
+
+5. Go to register -> server and setting . Fill in the corresponding env data .
+
+6. Create the table : cat ./database/createdb.sql | docker compose exec -T postgres psql --username postgres --dbname stadium
+
+7. Insert the data : cat ./database/data.sql | docker compose exec -T postgres psql --username postgres --dbname pg
 
 ### Schedule: 2024 6/25-7/24 => Complete basic functionalities before military service
 

@@ -1,36 +1,6 @@
 // Import required packages
-import pg from "pg";
 import express from "express";
 import bodyParser from "body-parser";
-import dotenv from "dotenv";
-
-// Load environment variables from .env file
-dotenv.config();
-
-// Establish a connection with the PostgreSQL database using node-postgres
-const { Client } = pg;
-
-const client = new Client({
-  user: process.env.POSTGRES_USER,
-  host: process.env.POSTGRES_HOST,
-  database: process.env.POSTGRES_DATABASE,
-  password: process.env.POSTGRES_PASSWORD,
-  port: process.env.POSTGRES_PORT,
-});
-
-// Connect to the database
-client.connect();
-
-// Create the users table if it doesn't exist
-const createTable = async () => {
-  await client.query(`CREATE TABLE IF NOT EXISTS users 
-  (id serial PRIMARY KEY, 
-  name VARCHAR (255) UNIQUE NOT NULL, 
-  email VARCHAR (255) UNIQUE NOT NULL, 
-  age INT NOT NULL);`);
-};
-
-createTable();
 
 // Initialize Express application
 const app = express();

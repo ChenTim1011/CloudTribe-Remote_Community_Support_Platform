@@ -23,8 +23,8 @@ We aim to scale up this model, allowing residents to earn money by helping more 
 
 # Technology Stack
 
-1. **Frontend: Javascript+ React **
-2. **Backend: Python + FastAPI **
+1. **Frontend: Javascript+ React**
+2. **Backend: Python + FastAPI**
 3. **Database: PostgreSQL**
 4. **Container: Docker**
 5. **Real-Time Communication: Socket.IO**
@@ -37,8 +37,7 @@ We aim to scale up this model, allowing residents to earn money by helping more 
 1. git clone https://github.com/ChenTim1011/CloudTribe.git
 
 2. change file .env.txt -> .env, and setting the environment variable about PostgreSQL
-
-3.Build the tools:
+3. Docker compose:
 
       docker-compose up --build.
 
@@ -55,8 +54,8 @@ We aim to scale up this model, allowing residents to earn money by helping more 
         cat ./database/data.sql | docker compose exec -T postgres psql --username postgres --dbname pg
 
 
-### Schedule: 2024 6/25-7/24 => Complete basic functionalities before military service
-### Schedule: 2024 7/4-7/7   => Field visit to Sbunaw tribe
-### Schedule: 2024 7/10      => First checkpoint
+### Schedule: 2024 6/25-7/24:Complete basic functionalities before military service
+### Schedule: 2024 7/4-7/7:Field visit to Sbunaw tribe
+### Schedule: 2024 7/10:First checkpoint
 
 By leveraging the power of technology, we aim to support remote communities and improve their access to essential goods and services.

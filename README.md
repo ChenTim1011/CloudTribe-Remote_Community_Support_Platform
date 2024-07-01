@@ -23,32 +23,40 @@ We aim to scale up this model, allowing residents to earn money by helping more 
 
 # Technology Stack
 
-1. **Frontend: React**
-2. **Backend: Node.js + Express**
+1. **Frontend: Javascript+ React **
+2. **Backend: Python + FastAPI **
 3. **Database: PostgreSQL**
 4. **Container: Docker**
 5. **Real-Time Communication: Socket.IO**
 6. **Maps and Route Planning: Google Maps API**
 7. **Reverse Proxy: Nginx**
+8. **LineBOT**
 
 ## Steps to install (TBD)
 
 1. git clone https://github.com/ChenTim1011/CloudTribe.git
 
-2. change file .env.txt -> .env, and setting the environment variable about Postgresql
+2. change file .env.txt -> .env, and setting the environment variable about PostgreSQL
 
-3. docker-compose up --build.
+3.Build the tools:
 
-4. Open http://localhost:8080/ login with the env email and password.
+      docker-compose up --build.
 
-5. Go to register -> server and setting . Fill in the corresponding env data .
+5. Open http://localhost:8080/ login with the env email and password.
 
-6. Create the table : cat ./database/createdb.sql | docker compose exec -T postgres psql --username postgres --dbname stadium
+6. Go to the admin page -> Go to register -> server and setting -> Fill the form with the corresponding env data .
 
-7. Insert the data : cat ./database/data.sql | docker compose exec -T postgres psql --username postgres --dbname pg
+7. Create the table :
+
+       cat ./database/createdb.sql | docker compose exec -T postgres psql --username postgres --dbname stadium
+
+9. Insert the data :
+
+        cat ./database/data.sql | docker compose exec -T postgres psql --username postgres --dbname pg
+
 
 ### Schedule: 2024 6/25-7/24 => Complete basic functionalities before military service
-
-### Schedule: 2024 7/4-7/7 => Field visit to Sbunaw tribe
+### Schedule: 2024 7/4-7/7   => Field visit to Sbunaw tribe
+### Schedule: 2024 7/10      => First checkpoint
 
 By leveraging the power of technology, we aim to support remote communities and improve their access to essential goods and services.
